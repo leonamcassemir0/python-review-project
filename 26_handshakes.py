@@ -1,11 +1,15 @@
-def handshakes(peoples):
-    for p in len(peoples):
-        people = peoples[0]
-        print(f"{people} handshake {peoples[p + 1]}")
-        people += 1
-        p += 1
+def printHandshakes(people):
+
+    numberOfHandshakes = 0
+
+    for i in range(0, len(people) - 1):
+        for j in range(i + 1, len(people)):
+            print(people[i], 'shakes hands with', people[j])
+            numberOfHandshakes += 1
+
+    return numberOfHandshakes
 
 
-handshakes(['Alice', 'Bob'])
-# printHandshakes(['Alice', 'Bob', 'Carol'])
-# printHandshakes(['Alice', 'Bob', 'Carol', 'David'])
+print(printHandshakes(['Alice', 'Bob']))
+print(printHandshakes(['Alice', 'Bob', 'Carol']))
+print(printHandshakes(['Alice', 'Bob', 'Carol', 'David'])) 
